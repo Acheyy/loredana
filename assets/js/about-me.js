@@ -1,7 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   new Splide("#image-carousel", {
-    width: "400px",
+    width: "100%",
     height: "400px",
+    pagination: false,
+    wheel: true,
+    breakpoints: {
+      4000: { perPage: 5, width: "100%" },
+      1300: { perPage: 3 },
+      1000: { perPage: 2 },
+      600: { perPage: 1 },
+    },
   }).mount();
 });
 var flatsomeVars = {
@@ -19,23 +27,15 @@ jQuery(window).scroll(function () {
   var currentScrollPos = jQuery(window).scrollTop();
 
   if (currentScrollPos > prevScrollPos) {
-    // Scrolling down
-    console.log("Scrolling down");
   } else {
-    // Scrolling up
-    console.log("Scrolling up");
-    console.log(currentScrollPos);
-    if (currentScrollPos === 0) {
+    if (currentScrollPos <= 59) {
       removeStuck();
-      console.log("da");
     }
   }
-
   prevScrollPos = currentScrollPos;
 });
 function removeStuck() {
   const stuck = document.querySelector(".stuck"); // Select the element with the "stuck" class using jQuery
-  console.log(stuck);
   if (stuck) {
     stuck.classList.remove("stuck");
   }
