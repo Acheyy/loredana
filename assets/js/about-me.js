@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     width: "100%",
     height: "400px",
     pagination: false,
-    wheel: true,
+    loop: true,
     breakpoints: {
       4000: { perPage: 5, width: "100%" },
       1300: { perPage: 3 },
@@ -28,7 +28,7 @@ jQuery(window).scroll(function () {
 
   if (currentScrollPos > prevScrollPos) {
   } else {
-    if (currentScrollPos <= 59) {
+    if (currentScrollPos <= 100) {
       removeStuck();
     }
   }
