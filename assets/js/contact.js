@@ -88,3 +88,23 @@ var flatsomeVars = {
   user: { can_edit_pages: false },
   i18n: { mainMenu: "Main Menu" },
 };
+
+var prevScrollPos = jQuery(window).scrollTop();
+
+jQuery(window).scroll(function () {
+  var currentScrollPos = jQuery(window).scrollTop();
+
+  if (currentScrollPos > prevScrollPos) {
+  } else {
+    if (currentScrollPos <= 100) {
+      removeStuck();
+    }
+  }
+  prevScrollPos = currentScrollPos;
+});
+function removeStuck() {
+  const stuck = document.querySelector(".stuck"); // Select the element with the "stuck" class using jQuery
+  if (stuck) {
+    stuck.classList.remove("stuck");
+  }
+}
