@@ -756,7 +756,9 @@ button:hover {
 #text-box-1594466952 {
   width: 64%;
 }
-
+.html_topbar_left{
+  text-align: center;
+}
 #text-box-1594466952 .text-box-content {
   font-size: 128%;
 }
@@ -930,6 +932,23 @@ button:hover {
 @media (max-width: 700px) {
   .custom-flex {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 849px) {
+  .logo-left {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .logo-left .show-for-medium {
+    display: none !important;
+  }
+  .logo-left  a {
+    display: inline-block;
+    text-align: center;
   }
 }
 
